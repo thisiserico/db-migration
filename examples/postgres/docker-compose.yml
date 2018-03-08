@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+    db:
+        image: postgres:9.6.4-alpine
+        environment:
+            POSTGRES_USER: example
+        ports:
+            - 55432:5432
+
+    migrations:
+        build:
+            context: .
+        command: up
+        environment:
+            DB_HOST: db
+            DB_USER: example
+            DB_NAME: example
+        depends_on:
+            - db
+        restart: on-failure
+
