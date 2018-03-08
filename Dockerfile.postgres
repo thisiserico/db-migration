@@ -1,0 +1,4 @@
+FROM thisiserico/db-migration:base
+
+ENV DIALECT "postgres"
+
