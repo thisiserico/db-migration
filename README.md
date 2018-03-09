@@ -1,7 +1,7 @@
 # db-migration
-[![Build Status](https://travis-ci.org/thisiserico/db-migration.svg?branch=master)](https://travis-ci.org/thisiserico/db-migration)
+[![Build Status](https://travis-ci.org/Typeform/db-migration.svg?branch=master)](https://travis-ci.org/Typeform/db-migration) [![Docker Container](https://quay.io/repository/typeform/db-migration/status "Docker Repository on Quay")](https://quay.io/repository/typeform/db-migration)
 
-[`thisiserico/db-migration`][db-migration] wraps [`sql-migrate`][sql-migrate] within docker to easily run your containerized migrations.
+[`quay.io/typeform/db-migration`][db-migration] wraps [`sql-migrate`][sql-migrate] within docker to easily run your containerized migrations.
 
 ## Containerize your migrations
 
@@ -16,7 +16,7 @@ sql
 
 - A `Dockerfile` with just a couple lines
 ```
-FROM thisiserico/db-migration:postgres-9.6.4
+FROM quay.io/typeform/db-migration:postgres-9.6.4
 COPY . .
 ```
 
@@ -26,6 +26,6 @@ docker build -t my-migrations .
 docker run my-migrations up
 ```
 
-[db-migration]: https://hub.docker.com/r/thisiserico/db-migration
+[db-migration]: https://quay.io/repository/typeform/db-migration
 [sql-migrate]: https://github.com/rubenv/sql-migrate
 
