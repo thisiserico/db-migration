@@ -5,15 +5,16 @@ POSTGRES_VERSION = 9.6.4
 build: build-base build-postgres
 
 build-base:
-	docker build -t thisiserico/db-migration:base .
+	docker build -t db-migration:base .
 
 build-postgres:
-	docker build -t thisiserico/db-migration:postgres -f Dockerfile.postgres .
+	docker build -t db-migration:postgres -f Dockerfile.postgres .
 
 tag:
-	docker tag thisiserico/db-migration:postgres thisiserico/db-migration:postgres-$(POSTGRES_VERSION)
+	docker tag db-migration:postgres quay.io/typeform/db-migration:postgres
+	docker tag db-migration:postgres quay.io/typeform/db-migration:postgres-$(POSTGRES_VERSION)
 
 push:
-	docker push thisiserico/db-migration:postgres
-	docker push thisiserico/db-migration:postgres-$(POSTGRES_VERSION)
+	docker push quay.io/typeform/db-migration:postgres
+	docker push quay.io/typeform/db-migration:postgres-$(POSTGRES_VERSION)
 
