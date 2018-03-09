@@ -1,4 +1,4 @@
-.PHONY: build build-base build-postgres
+.PHONY: build build-base build-postgres push
 
 build: build-base build-postgres
 
@@ -7,4 +7,7 @@ build-base:
 
 build-postgres:
 	docker build -t thisiserico/db-migration:postgres -f Dockerfile.postgres .
+
+push:
+	docker push thisiserico/db-migration:postgres
 
